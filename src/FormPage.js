@@ -41,7 +41,6 @@ class FormPage extends Component {
     switch(fieldName) {
     case 'email':
     emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-    console.log(value)
     fieldValidationErrors.email = emailValid ? '': 'is invalid';
     break;
     case 'password':
@@ -78,7 +77,8 @@ this.setState({formValid: this.state.emailValid && this.state.passwordValid})
     onChange={this.handleChange}
 
     />
-
+      <br></br>
+      <div>{this.state.formErrors.email}</div>
 
     <button disabled={!this.state.formValid} type="submit">Submit</button>
     </form>
